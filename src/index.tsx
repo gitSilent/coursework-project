@@ -12,7 +12,6 @@ import AboutPage from './pages/AboutPage';
 import ShoppingCartPage from './pages/ShoppingCartPage';
 import Profile from './pages/Profile';
 import AuthorizationPage from './pages/AuthorizationPage';
-import Registration from './pages/RegistrationPage';
 import RegistrationPage from './pages/RegistrationPage';
 
 const router = createBrowserRouter([
