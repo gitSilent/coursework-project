@@ -13,6 +13,7 @@ import ShoppingCartPage from './pages/ShoppingCartPage';
 import Profile from './pages/Profile';
 import AuthorizationPage from './pages/AuthorizationPage';
 import RegistrationPage from './pages/RegistrationPage';
+import FeedbackPage from './pages/FeedbackPage';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "/feedback",
+    element: <FeedbackPage/>,
     errorElement: <ErrorPage/>
   },
   {

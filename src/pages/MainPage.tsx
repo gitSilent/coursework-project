@@ -16,11 +16,18 @@ export default function MainPage() {
   return (
     <div className='relative min-h-full'>
       <Header/>
-      <main className='flex flex-col m-auto pb-[280px] px-[20px] max-w-[1400px] '>
+      <main className='flex flex-col m-auto pb-[280px] pt-[90px] px-[20px] max-w-[1400px] '>
         <img src={main_banner} alt="" className='hidden sm:block'/>
         <img src={mobile_banner} alt="" className='sm:hidden'/>
 
-        <div className='flex items-start m-auto w-fit flex-col gap-[20px] mt-[100px] mb-[100px] text-[18px] sl:flex-row sl:flex-wrap sl:justify-between sl:w-full'>
+        
+        <div className='flex flex-wrap w-full justify-center'>
+          <img src={main_card1} alt="" className='w-full max-w-[380px] sl:max-w-[450px]'/>
+          <img src={main_card2} alt="" className='w-full max-w-[380px] sl:max-w-[450px]'/>
+          <img src={main_card3} alt="" className='w-full max-w-[380px] sl:max-w-[450px]'/>
+        </div>
+
+        <div className='flex items-start m-auto w-fit flex-col gap-[20px] mt-[100px] mb-[100px] text-[18px] xm:flex-row'>
           <div className='flex flex-row items-center font-medium gap-[40px]'>
             <img src={leaf_icon} alt="" className='w-[120px]'/>
             <span>Гипоаллергенно</span>
@@ -34,12 +41,7 @@ export default function MainPage() {
             <span>С душой</span>
           </div>
         </div>
-        <div className='flex flex-wrap w-full justify-center'>
-          <img src={main_card1} alt="" className='w-full max-w-[380px] sl:max-w-[450px]'/>
-          <img src={main_card2} alt="" className='w-full max-w-[380px] sl:max-w-[450px]'/>
-          <img src={main_card3} alt="" className='w-full max-w-[380px] sl:max-w-[450px]'/>
-        </div>
-
+        
         <section>
           <h2 className='m-auto w-fit text-[25px] uppercase font-semibold my-[50px] sl:text-[35px]'>Бестселлеры</h2>
           <div className='flex flex-wrap gap-[20px]'>

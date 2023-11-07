@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 export default function Header() {
   const [isSidebarOpened, setIsSidebarOpened] = useState<boolean>(false);
   return (
-    <div className="px-[25px] py-[16px] flex justify-between items-center gap-10">
+    <div className="px-[25px] py-[16px] w-full bg-white flex fixed justify-between items-center gap-8">
       <Sidebar
           isSidebarOpened={isSidebarOpened}
           setIsSidebarOpened={setIsSidebarOpened}
         />
       <Bars3Icon
-        className="w-[35px] z-90 hover:cursor-pointer sl:hidden"
+        className="min-w-[30px] max-w-[35px] z-90 hover:cursor-pointer sl:hidden"
         onClick={() => {
           setIsSidebarOpened(true);
         }}
@@ -24,15 +24,16 @@ export default function Header() {
       <div className="max-w-[615px] w-full font-medium hidden sl:block">
         <ul className="flex justify-between max-w-[615px] text-[18px]">
           <li><Link to={"/"}>Главная</Link></li>
-          <li><Link to={"/"}>Товары</Link></li>
-          <li><Link to={"/"}>О нас</Link></li>
-          <li><Link to={"/"}>Обратная связь</Link></li>
+          <li><Link to={"/products"}>Товары</Link></li>
+          <li><Link to={"/about"}>О нас</Link></li>
+          <li><Link to={"/feedback"}>Обратная связь</Link></li>
          
         </ul>
       </div>
       <div className="flex gap-5">
-        <img src={cartIcon} alt="" className="hover:cursor-pointer"/>
-        <img src={userIcon} alt="" className="hover:cursor-pointer"/>
+        <Link to={""}><img src={cartIcon} alt="" className="min-w-[25px] hover:cursor-pointer"/></Link>
+        <Link to={""}><img src={userIcon} alt="" className="min-w-[25px] hover:cursor-pointer"/></Link>
+        
       </div>
     </div>
   );
