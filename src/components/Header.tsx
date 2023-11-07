@@ -22,7 +22,7 @@ export default function Header() {
       />
       <img src={logo} alt="" className="w-[120px] hover:cursor-pointer" />
       <div className="max-w-[615px] w-full font-medium hidden sl:block">
-        <ul className="flex justify-between max-w-[615px]">
+        <ul className="flex justify-between max-w-[615px] text-[18px]">
           <li><Link to={"/"}>Главная</Link></li>
           <li><Link to={"/"}>Товары</Link></li>
           <li><Link to={"/"}>О нас</Link></li>
