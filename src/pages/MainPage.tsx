@@ -44,12 +44,12 @@ export default function MainPage() {
         
         <section>
           <h2 className='m-auto w-fit text-[25px] uppercase font-semibold my-[50px] sl:text-[35px]'>Бестселлеры</h2>
-          <div className='flex flex-wrap gap-[20px]'>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <ProductCard id={1} photos={[{image:"#"}]} price={1500} title="#"/>
+            <ProductCard id={1} photos={[{image:"#"}]} price={1500} title="#"/>
+            <ProductCard id={1} photos={[{image:"#"}]} price={1500} title="#"/>
+            <ProductCard id={1} photos={[{image:"#"}]} price={1500} title="#"/>
+            <ProductCard id={1} photos={[{image:"#"}]} price={1500} title="#"/>
           </div>
         </section>
 

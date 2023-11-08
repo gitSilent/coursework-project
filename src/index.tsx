@@ -14,6 +14,7 @@ import Profile from './pages/Profile';
 import AuthorizationPage from './pages/AuthorizationPage';
 import RegistrationPage from './pages/RegistrationPage';
 import FeedbackPage from './pages/FeedbackPage';
+import ProductsPage from './pages/ProductsPage';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <ProductPage/>,
+    element: <ProductsPage/>,
     errorElement: <ErrorPage/>
   },
   {
