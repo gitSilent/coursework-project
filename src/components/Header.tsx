@@ -20,7 +20,9 @@ export default function Header() {
           setIsSidebarOpened(true);
         }}
       />
-      <img src={logo} alt="" className="w-[120px] hover:cursor-pointer" />
+      <Link to={"/"}>
+        <img src={logo} alt="" className="w-[120px] hover:cursor-pointer" />
+      </Link>
       <div className="max-w-[615px] w-full font-medium hidden sl:block">
         <ul className="flex justify-between max-w-[615px] text-[18px]">
           <li><Link to={"/"}>Главная</Link></li>
