@@ -13,13 +13,13 @@ export default function Sidebar({
 }: IProps) {
   return (
     <div
-      className={`fixed top-0 left-0 z-80 h-full w-[70vw] bg-black ease-in-out duration-300 ${
+      className={`fixed top-0 left-0 z-80 h-full w-[100vw] bg-black ease-in-out duration-300 ${
         isSidebarOpened ? "translate-x-0 " : "-translate-x-full"
       }`}
     >
       <Bars3Icon
         color="white"
-        className="w-[35px] ml-[25px] mt-[22px] mb-5 hover:cursor-pointer"
+        className="w-[35px] ml-[25px] mt-[22px] mb-5 z-[10] hover:cursor-pointer"
         onClick={() => {
           setIsSidebarOpened(false);
         }}

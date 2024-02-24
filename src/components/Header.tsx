@@ -15,7 +15,7 @@ export default function Header() {
           setIsSidebarOpened={setIsSidebarOpened}
         />
       <Bars3Icon
-        className="min-w-[30px] max-w-[35px] z-[90] hover:cursor-pointer sl:hidden"
+        className="min-w-[30px] max-w-[35px] z-[-1] hover:cursor-pointer sl:hidden"
         onClick={() => {
           setIsSidebarOpened(true);
         }}

@@ -31,17 +31,27 @@ export default function ProductsPage() {
             <FormControl>
               <InputLabel id="demo-simple-select-label">Сортировка</InputLabel>
               <Select
+              style={{borderRadius:'100px', border:'1px', borderColor:'#767676'}}
                 labelId="demo-simple-select-label"
                 id="default-select"
-                // value={age}
                 label="Сортировка"
-                // onChange={handleChange}
+                defaultValue={'popularity'}
               >
-                <MenuItem value={10}>По популярности</MenuItem>
-                <MenuItem value={20}>По возрастанию цены</MenuItem>
-                <MenuItem value={30}>По убыванию цены</MenuItem>
+                <MenuItem value={'popularity'}>По популярности</MenuItem>
+                <MenuItem value={'price_asc'}>По возрастанию цены</MenuItem>
+                <MenuItem value={'price_desc'}>По убыванию цены</MenuItem>
               </Select>
             </FormControl>
+
+            <div className="flex items-center gap-[4px] ml-[20px] border-[1px] border-[#767676] py-[8px] px-[15px] rounded-full">
+              <span className="text-[#646464] text-[16px] font-normal">От</span>
+              <input placeholder="2500" type="text" className="border-none font-normal rounded-full max-w-[80px] bg-[#ECECEC] py-[5px] px-[10px]" />
+            </div>
+
+            <div className="flex items-center gap-[4px] ml-[10px] border-[1px] border-[#767676] py-[8px] px-[15px] rounded-full">
+              <span className="text-[#646464] text-[16px] font-normal">До</span>
+              <input placeholder="2500" type="text" className="border-none font-normal rounded-full max-w-[80px] bg-[#ECECEC] py-[5px] px-[10px]" />
+            </div>
           </div>
         </div>
 

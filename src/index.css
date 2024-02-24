@@ -138,9 +138,9 @@ html{
 
 }
 
-#default-select{
+/* #default-select{
   border-radius: 100px;
-}
+} */
 
 .hideScroll {
   scrollbar-width: none; /* For Firefox */
@@ -149,4 +149,21 @@ html{
 
 .hideScroll::-webkit-scrollbar {
   width: 0px; /* For Chrome, Safari, and Opera */
+}
+.Mui-focused .MuiOutlinedInput-notchedOutline{
+  border: 1px solid #484850 !important; 
+  border-radius: "5px 5px 0 0" !important;
+}
+.Mui-focused{
+  color: #767676 !important;
+}
+
+.block-shadow{
+  -webkit-box-shadow: 0px 0px 22px -5px rgba(34, 60, 80, 0.17);
+  -moz-box-shadow: 0px 0px 22px -5px rgba(34, 60, 80, 0.17);
+  box-shadow: 0px 0px 22px -5px rgba(34, 60, 80, 0.17);
+}
+
+input:disabled{
+  color: #767676
 }
