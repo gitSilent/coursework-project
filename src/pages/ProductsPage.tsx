@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
@@ -7,7 +7,14 @@ import InputLabel from "@mui/material/InputLabel/InputLabel";
 import Select from "@mui/material/Select/Select";
 import MenuItem from "@mui/material/MenuItem/MenuItem";
 
+import product from '../media/product_card.jpg'
+import ex from '../media/svg-icons/ex.svg'
+
+
 export default function ProductsPage() {
+  const [maxPrice, setMaxPrice] = useState<number>(0)
+  const [minPrice, setMinPrice] = useState<number>(0)
+
   return (
     <div className="relative min-h-full">
       <Header />
@@ -16,7 +23,7 @@ export default function ProductsPage() {
           Каталог
         </h2>
 
-        <div className="mb-[30px] flex gap-[10px] w-full justify-between">
+        <div className="mb-[30px] flex flex-col md:flex-row gap-[10px] w-full justify-between">
           <div className="flex gap-[5px] w-full">
             <input
               type="text"
@@ -27,7 +34,7 @@ export default function ProductsPage() {
               Найти
             </button>
           </div>
-          <div className="flex">
+          <div className="flex flex-col gap-[5px] sm:flex-row">
             <FormControl>
               <InputLabel id="demo-simple-select-label">Сортировка</InputLabel>
               <Select
@@ -43,14 +50,30 @@ export default function ProductsPage() {
               </Select>
             </FormControl>
 
-            <div className="flex items-center gap-[4px] ml-[20px] border-[1px] border-[#767676] py-[8px] px-[15px] rounded-full">
+            <div className="relative flex items-center gap-[4px] max-w-[195px] md:ml-[20px] border-[1px] border-[#767676] py-[8px] px-[15px] rounded-full">
               <span className="text-[#646464] text-[16px] font-normal">От</span>
-              <input placeholder="2500" type="text" className="border-none font-normal rounded-full max-w-[80px] bg-[#ECECEC] py-[5px] px-[10px]" />
+              <input 
+                onChange={(e)=>{setMinPrice(Number(e.target.value) >= 1 ? Number(e.target.value) : 0)}}
+                placeholder="2500" 
+                value={minPrice}
+                type="number" className="border-none font-normal rounded-full max-w-[80px] bg-[#ECECEC] py-[5px] px-[10px]" />
+              
+              {minPrice !== 0 &&  <div onClick={()=>{setMinPrice(0)}} className="absolute flex justify-center items-center w-[20px] h-[20px] top-0 right-0 rounded-full bg-black hover:cursor-pointer">
+                <img src={ex} alt="" className="brightness-200 w-[10px]"/>
+              </div>}
             </div>
 
-            <div className="flex items-center gap-[4px] ml-[10px] border-[1px] border-[#767676] py-[8px] px-[15px] rounded-full">
+            <div className="relative flex items-center gap-[4px] max-w-[195px] md:ml-[10px] border-[1px] border-[#767676] py-[8px] px-[15px] rounded-full">
               <span className="text-[#646464] text-[16px] font-normal">До</span>
-              <input placeholder="2500" type="text" className="border-none font-normal rounded-full max-w-[80px] bg-[#ECECEC] py-[5px] px-[10px]" />
+              <input 
+                onChange={(e)=>{setMaxPrice(Number(e.target.value) >= 1 ? Number(e.target.value) : 0)}} 
+                placeholder="2500" 
+                value={maxPrice}
+                type="number" className="border-none font-normal rounded-full max-w-[80px] bg-[#ECECEC] py-[5px] px-[10px]" />
+              
+              {maxPrice !== 0 && <div onClick={()=>{setMaxPrice(0)}} className="absolute flex justify-center items-center w-[20px] h-[20px] top-0 right-0 rounded-full bg-black hover:cursor-pointer">
+                <img src={ex} alt="" className="brightness-200 w-[10px]"/>
+              </div>}
             </div>
           </div>
         </div>

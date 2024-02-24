@@ -5,14 +5,19 @@ import userIcon from "../media/svg-icons/userIcon.svg";
 import cartIcon from "../media/svg-icons/cartIcon.svg";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
+import ModalFeedback from "./ModalFeedback";
 
 export default function Header() {
   const [isSidebarOpened, setIsSidebarOpened] = useState<boolean>(false);
+  const [isModalFeedbackActive, setIsModalFeedbackActive] = useState<boolean>(false)
+
   return (
     <div className="px-[20px] py-[16px] w-full z-50 bg-white flex fixed justify-between items-center gap-4">
+      <ModalFeedback active={isModalFeedbackActive} setActive={setIsModalFeedbackActive}/>
       <Sidebar
           isSidebarOpened={isSidebarOpened}
           setIsSidebarOpened={setIsSidebarOpened}
+          setIsModalFeedbackActive={setIsModalFeedbackActive}
         />
       <Bars3Icon
         className="min-w-[30px] max-w-[35px] z-[-1] hover:cursor-pointer sl:hidden"
@@ -28,7 +33,7 @@ export default function Header() {
           <li><Link to={"/"}>Главная</Link></li>
           <li><Link to={"/products"}>Товары</Link></li>
           <li><Link to={"/about"}>О нас</Link></li>
-          <li><Link to={"/feedback"}>Обратная связь</Link></li>
+          <li onClick={()=>setIsModalFeedbackActive(true)} className="hover:cursor-pointer">Обратная связь</li>
          
         </ul>
       </div>

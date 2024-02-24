@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 
 interface IProps {
   isSidebarOpened: boolean;
-  setIsSidebarOpened: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsSidebarOpened: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsModalFeedbackActive: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Sidebar({
-  isSidebarOpened,
-  setIsSidebarOpened,
-}: IProps) {
+export default function Sidebar({ isSidebarOpened, setIsSidebarOpened, setIsModalFeedbackActive}: IProps) {
   return (
     <div
       className={`fixed top-0 left-0 z-80 h-full w-[100vw] bg-black ease-in-out duration-300 ${
@@ -31,7 +29,10 @@ export default function Sidebar({
           <hr className="bg-black h-[1px]" />
           <Link to={"/about"} className="block px-3 py-5 text-2xl text-white pl-[25px] hover:bg-slate-600 hover:cursor-pointer duration-100">О нас</Link>
           <hr className="bg-black h-[1px]" />
-          <Link to={"/feedback"} className="block px-3 py-5 text-2xl text-white pl-[25px] hover:bg-slate-600 hover:cursor-pointer duration-100">Обратная связь</Link>
+          <div onClick={() => {
+            setIsSidebarOpened(false);
+            setIsModalFeedbackActive(true)
+          }} className="block px-3 py-5 text-2xl text-white pl-[25px] hover:bg-slate-600 hover:cursor-pointer duration-100">Обратная связь</div>
   
       </div>
     </div>
