@@ -140,12 +140,24 @@ export default function ProductPage() {
 
           <h2 className="mt-[50px] text-[16px] font-medium uppercase mb-[10px]">Отзывы</h2>
           <div className="flex gap-[10px] max-w-[100%] mx-auto overflow-x-auto hideScroll" {...events} ref={ref} >
-            <Review />
-            <Review />
-            <Review />
-            <Review />
-            <Review />
-            <Review />
+            <Review 
+              username="Анастасия" 
+              rating={5} 
+              description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptates, quae reprehenderit magni in ullam porro, numquam facere nobis repellat placeat tenetur quod? Quia nesciunt modi dolor id vitae beatae." 
+              creation_date="10 сентября 2023" />
+              
+            <Review 
+              username="Анастасия" 
+              rating={5} 
+              description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptates, quae reprehenderit magni in ullam porro, numquam facere nobis repellat placeat tenetur quod? Quia nesciunt modi dolor id vitae beatae." 
+              creation_date="10 сентября 2023" />
+
+            <Review 
+              username="Анастасия" 
+              rating={5} 
+              description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptates, quae reprehenderit magni in ullam porro, numquam facere nobis repellat placeat tenetur quod? Quia nesciunt modi dolor id vitae beatae." 
+              creation_date="10 сентября 2023" />
+           
           </div>
         </section>
 

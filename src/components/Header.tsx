@@ -13,7 +13,8 @@ export default function Header() {
 
   return (
     <div className="px-[20px] py-[16px] w-full z-50 bg-white flex fixed justify-between items-center gap-4">
-      <ModalFeedback active={isModalFeedbackActive} setActive={setIsModalFeedbackActive}/>
+      {isModalFeedbackActive && <ModalFeedback active={isModalFeedbackActive} setActive={setIsModalFeedbackActive}/>}
+      
       <Sidebar
           isSidebarOpened={isSidebarOpened}
           setIsSidebarOpened={setIsSidebarOpened}
@@ -28,19 +29,19 @@ export default function Header() {
       <Link to={"/"}>
         <img src={logo} alt="" className="w-[120px] hover:cursor-pointer" />
       </Link>
+
       <div className="max-w-[615px] w-full font-medium hidden sl:block">
         <ul className="flex justify-between max-w-[615px] text-[18px]">
           <li><Link to={"/"}>Главная</Link></li>
           <li><Link to={"/products"}>Товары</Link></li>
           <li><Link to={"/about"}>О нас</Link></li>
           <li onClick={()=>setIsModalFeedbackActive(true)} className="hover:cursor-pointer">Обратная связь</li>
-         
         </ul>
       </div>
+
       <div className="flex gap-5">
         <Link to={"/cart"}><img src={cartIcon} alt="" className="min-w-[25px] hover:cursor-pointer"/></Link>
         <Link to={"/profile"}><img src={userIcon} alt="" className="min-w-[25px] hover:cursor-pointer"/></Link>
-        
       </div>
     </div>
   );
